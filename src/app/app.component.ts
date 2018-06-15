@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from './api.service';
-import { News } from './news';
+import { Article } from './article';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +9,13 @@ import { News } from './news';
 })
 export class AppComponent {
   title = 'app';
-  allNews: News[] = [];
+  allNews: Article[] = [];
 
   constructor(private apiService: ApiService) {}
 
   public ngOnInit() {
     this.apiService.getAllNews().subscribe(allNews => {
       this.allNews = allNews;
-      console.log('allNews: ', allNews);
     });
   }
 }
