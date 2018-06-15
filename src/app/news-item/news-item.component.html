@@ -1,4 +1,4 @@
-<article class="article">
+<article class="article" [class.isFavorite]="isFavorite(article.title)">
   <div class="article__aside">
     <div class="article__cover">
       <img src="{{ article.urlToImage }}" alt="Cover" width="200">
