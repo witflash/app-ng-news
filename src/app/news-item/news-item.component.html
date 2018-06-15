@@ -3,7 +3,11 @@
     <div class="article__cover">
       <img src="{{ article.urlToImage }}" alt="Cover" width="200">
     </div>
-    <button>Add to Favorite</button>
+    <button *ngIf="!isFavorite(article.title)" (click)="addToFavorites(article.title);">Add to Favorites</button>
+    <div *ngIf="isFavorite(article.title)">
+      <p>In Favorites</p>
+      <button (click)="removeFromFavorites(article.title)">Remove</button>
+    </div>
   </div>
   <div class="article__content">
     <h3 class="article__title">{{ article.title }}</h3>

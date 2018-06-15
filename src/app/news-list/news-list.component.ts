@@ -11,8 +11,4 @@ export class NewsListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-    console.log('allNews', this.allNews);
-  }
-
 }
